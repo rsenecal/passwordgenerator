@@ -1,5 +1,3 @@
-# passwordgenerator
-
 # Password Generator
 
 ## Description
