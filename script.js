@@ -78,6 +78,7 @@ function generatePassword() {
   }
   //Iterating passwordChars to select random values until password length is reached
   for ( var i=0; i < passwordLength; i++) {
+    var password;
      var randomNumber = Math.floor(Math.random() * passwordChars.length); //Get a random number between 0 and number of characters in the passwordChars var
      password += passwordChars.substring(randomNumber, randomNumber+1); // Assign and concat passwor char
   }
@@ -90,11 +91,10 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.innerHTML = password;
 
 }
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
