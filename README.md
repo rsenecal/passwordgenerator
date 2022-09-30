@@ -1,12 +1,9 @@
 # Password Generator
 
 ## Description
-Online password generator. Use this Application to create a secure ramdon password. 
-Use this password generator to create a secure complex password with multiple type of
-charactes. Lower case letters, Upper Case Letters, Numbers and Special Characters. 
+Online password generator. Use this Application to create a secure random password. Use this password generator to create a secure complex password with multiple types of charactes. Lower case letters, Upper Case Letters, Numbers, and Special Characters.
 
-This app runs on you browser, your phone or tablet. 
-
+This app runs on your browser, your phone, or your tablet.
 ### Dependencies
 
 * Web browser: 
