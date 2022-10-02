@@ -1,5 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var password = null;
+
 // document.getElementById("generate").disabled = true;
 
   //get password Length from user -- Loop until in correct range
@@ -7,6 +9,7 @@ var generateBtn = document.querySelector("#generate");
   function getPasswordCriterias() {
 
         var passwordLength = prompt("Password Lenght:", "between 8 and 128 Characters");
+        
         while (passwordLength < 8 || passwordLength > 128) {
           var passwordLength =  prompt("Password Lenght MUST be between 8 and 128 plaese enter a new value", "between 8 and 128 Characters");
         };
@@ -57,32 +60,40 @@ function generatePassword() {
   var passwordLowerChars ="abcdefghijklmnopqrstuvwxyz";
   var passwordNumbers = "0123456789";
   var passwordSpecialChars = "!@#$%^&*()";
+  var passwordChars = "";
 
   var userData = getPasswordCriterias(); //Assign values from getPasswordCriterias to var userData
   var passwordLength = userData[0];
+
   var isLowerCase = userData[1];
     if (isLowerCase){
       var passwordChars =  passwordChars + passwordLowerChars;
     }
+
   var isUpperCase = userData[2];
   if (isUpperCase){
     var passwordChars = passwordChars + passwordUpperChars;
   }
+
   var isSpcialChar = userData[3];
   if (isSpcialChar){
     var passwordChars = passwordChars + passwordSpecialChars;
   }
+
   var isNumberChar = userData[4];
   if (isNumberChar){
     var passwordChars = passwordChars + passwordNumbers;
   }
+
+  console.log("Password Characters /*end of if statements*/: " + passwordChars); 
+
   //Iterating passwordChars to select random values until password length is reached
   for ( var i=0; i < passwordLength; i++) {
-    var password;
+    //var password=null;
      var randomNumber = Math.floor(Math.random() * passwordChars.length); //Get a random number between 0 and number of characters in the passwordChars var
      password += passwordChars.substring(randomNumber, randomNumber+1); // Assign and concat passwor char
   }
-  console.log ("Password Generated" + password);
+  console.log ("**** Password Generated *** " + password);
   return password
  }
  
@@ -91,7 +102,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.innerHTML = password;
+  passwordText.textContent = password;
 
 }
 
